@@ -16,6 +16,8 @@
   "bugs": {
     "url": "https://github.com/navodsand/Forkify/issues"
   },
-  "homepage": "https://github.com/navodsand/Forkify#readme"
+  "homepage": "https://github.com/navodsand/Forkify#readme",
+  "devDependencies": {
+    "parcel": "^2.10.3"
+  }
 }
- 
