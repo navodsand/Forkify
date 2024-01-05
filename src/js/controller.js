@@ -22,7 +22,13 @@ const showrecipe = async function () {
     if (!res.ok) throw new Error(`${data.message} (${res.status})`);
 
     console.log(res, data);
-    let recipe = data.data.recipe;
+    let { recipe } = data.data; 
+    recipe = {
+      id: recipe.id,
+      title: recipe.title,
+      publisher: recipe.publisher,
+      sourceurl: recipe.source_url,
+    }
   }catch(err){
     alert(err);
   }
