@@ -15,20 +15,26 @@ const timeout = function (s) {
 const showrecipe = async function () {
   try{
     const res =await fetch (
-      'https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054bc886'
+      'https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054bcc40'
+      //'https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054bc886'
     );
     const data = await res.json();
 
     if (!res.ok) throw new Error(`${data.message} (${res.status})`);
 
-    console.log(res, data);
+   
     let { recipe } = data.data; 
     recipe = {
       id: recipe.id,
       title: recipe.title,
       publisher: recipe.publisher,
       sourceurl: recipe.source_url,
+      image: recipe.image_url,
+      servings: recipe.servings,
+      cookingTime: recipe.cooking_time,
+      ingredints: recipe.ingredients
     }
+    console.log(recipe);
   }catch(err){
     alert(err);
   }
